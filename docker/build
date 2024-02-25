@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+docker compose build
+docker rmi $(docker images -a --filter=dangling=true -q)

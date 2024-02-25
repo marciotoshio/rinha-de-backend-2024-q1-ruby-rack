@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+docker compose up -d
+CONTAINER=$(docker compose ps | grep api01 | awk '{print $1}')
+docker attach $CONTAINER
